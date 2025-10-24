@@ -2,12 +2,18 @@ st = input('Введите текст: ')
 
 tempDict = {}
 
-lower_st = ''
+russian_upper = 'АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ'
+russian_lower = 'абвгдеёжзийклмнопрстуфхцчшщъыьэюя'
+english_upper = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+english_lower = 'abcdefghijklmnopqrstuvwxyz'
+
 for char in st:
-    if 'А' <= char <= 'Я':
-        lower_st += chr(ord(char) + 32)
-    elif 'A' <= char <= 'Z':
-        lower_st += chr(ord(char) + 32)
+    if char in russian_upper:
+        index = russian_upper.index(char)
+        lower_st += russian_lower[index]
+    elif char in english_upper:
+        index = english_upper.index(char)
+        lower_st += english_lower[index]
     else:
         lower_st += char
 
@@ -21,6 +27,7 @@ for s in lower_st:
             cur_word = ''
     else:
         cur_word += s
+
 if cur_word:
     words.append(cur_word)
 
