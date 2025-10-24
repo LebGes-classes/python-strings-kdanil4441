@@ -49,6 +49,6 @@ for i in range(n):
         if sorted_items[j][0] < sorted_items[j + 1][0]:
             sorted_items[j], sorted_items[j + 1] = sorted_items[j + 1], sorted_items[j]
 
-for i in range(min(5, len(sorted_items))):
+for i in range(min(5, n)):
     count, word = sorted_items[i]
     print(word, count)
