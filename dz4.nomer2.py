@@ -9,11 +9,11 @@ for ch in text:
         if prev_char != ',':
             if cur_word:
                 words.append(cur_word)
-                curr_word = ''
+                cur_word = ''
     elif ch == '.' or ch == ',':
         if cur_word:
             words.append(cur_word)
-            curr_word = ""
+            cur_word = ""
     else:
         cur_word += ch
     prev_char = ch
